@@ -38,12 +38,6 @@ func loadContent() string {
 	}
 
 	// Support your local airgaps
-	if file, err := os.ReadFile("local.html"); err != nil {
-		logger.Error("failed to read local file")
-	} else {
-		logger.Info("local file content found")
-		return string(file)
-	}
 
 	// Default failure content
 	logger.Info("using default failure HTML")
