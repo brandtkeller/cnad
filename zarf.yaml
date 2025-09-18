@@ -5,6 +5,7 @@ metadata:
 
 components:
   - name: cnad
+    required: true
     charts:
       - name: cnad
         version: 0.1.0

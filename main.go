@@ -10,7 +10,7 @@ import (
 )
 
 const (
-	remoteURL = "https://test" // endpoint to try first
+	remoteURL = "https://doesnotexist.io" // endpoint to try first
 	addr      = "0.0.0.0:8080"
 )
 

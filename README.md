@@ -1,7 +1,1 @@
-# cnad
-cloud native airgap demo
-
-
-## Dependencies
-
-Need the distroless image
+# Cloud Native Airgap Demo

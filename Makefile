@@ -34,4 +34,4 @@ docker-run:
 
 # output the zarf package create command
 zarf:
-	@echo "zarf package create"
+	@echo ">> creating the zarf package"

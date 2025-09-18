@@ -4,6 +4,7 @@ metadata:
   name: {{ include "chart.fullname" . }}
   labels:
     {{- include "chart.labels" . | nindent 4 }}
+    zarf.dev/connect-name: webapp
 spec:
   type: {{ .Values.service.type }}
   ports:
