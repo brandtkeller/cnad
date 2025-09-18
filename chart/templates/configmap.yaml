@@ -1,0 +1,48 @@
+{{ if .Values.configmap.enabled }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: airgap-cm
+  labels:
+    {{- include "chart.labels" . | nindent 4 }}
+data:
+  local.html: |
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <title>Airgapped Computing Environment</title>
+      <style>
+        body { font-family: Arial, sans-serif; margin: 2em; line-height: 1.6; }
+        h1 { color: #2c3e50; }
+        p { margin-bottom: 1em; }
+      </style>
+    </head>
+    <body>
+      <h1>Definition of an Airgapped Computing Environment</h1>
+      <p>
+        An <strong>airgapped computing environment</strong> is a network or system
+        that is physically isolated from unsecured or public networks, including the
+        Internet. This isolation prevents external connectivity, thereby significantly
+        reducing the risk of cyberattacks, data exfiltration, or unauthorized remote
+        access.
+      </p>
+      <p>
+        Airgapped systems are commonly used in defense, critical infrastructure,
+        financial systems, and other high-security environments. They rely on
+        controlled transfer mechanisms, such as removable media or approved
+        gateways, to move data in and out of the environment. Strict policies,
+        auditing, and monitoring are applied to maintain integrity and security.
+      </p>
+      <p>
+        Key characteristics include:
+        <ul>
+          <li>No direct connection to the Internet or external networks</li>
+          <li>Restricted physical and logical access</li>
+          <li>Controlled data ingress/egress processes</li>
+          <li>Focus on confidentiality, integrity, and resilience</li>
+        </ul>
+      </p>
+    </body>
+    </html>
+{{- end}}

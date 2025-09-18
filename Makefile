@@ -1,6 +1,6 @@
 # Binary and image names
 BINARY      := myapp
-IMAGE       := myapp:latest
+IMAGE       := myapp:0.0.1
 DOCKERFILE  := Dockerfile
 
 # Default Go build flags

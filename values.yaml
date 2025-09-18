@@ -1,0 +1,14 @@
+configmap:
+  enabled: true
+
+# Additional volumes on the output Deployment definition.
+volumes:
+- name: airgap-page
+  configMap:
+    name: airgap-cm
+
+# Additional volumeMounts on the output Deployment definition.
+volumeMounts:
+- name: airgap-page
+  mountPath: /local.html
+  subPath: local.html
