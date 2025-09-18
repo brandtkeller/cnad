@@ -1,0 +1,10 @@
+kind: ZarfPackageConfig
+metadata:
+  name: cnad
+  description: Used to establish a new Zarf cluster
+
+components:
+  - name: cnad
+    images:
+    - myapp:latest
+
