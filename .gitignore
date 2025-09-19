@@ -1,2 +1,5 @@
 myapp
 *.tar.zst
+*.key
+*.pub
+archive/

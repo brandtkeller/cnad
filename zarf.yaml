@@ -1,6 +1,7 @@
 kind: ZarfPackageConfig
 metadata:
   name: cnad
+  version: 0.0.1
   description: Used to establish a new Zarf cluster
 
 components:
