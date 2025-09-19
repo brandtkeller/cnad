@@ -3,3 +3,4 @@ myapp
 *.key
 *.pub
 archive/
+sbom/

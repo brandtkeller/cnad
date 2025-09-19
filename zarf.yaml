@@ -5,15 +5,14 @@ metadata:
   description: Used to establish a new Zarf cluster
 
 components:
-  - name: cnad
+  - name: webapp
     required: true
     charts:
-      - name: cnad
+      - name: webapp
         version: 0.1.0
-        namespace: cnad
+        namespace: webapp
         localPath: chart
         valuesFiles:
           - values.yaml
     images:
       - myapp:0.0.1
-

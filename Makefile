@@ -32,7 +32,12 @@ docker-run:
 	@echo ">> Running container: $(IMAGE)"
 	docker run --rm -p 8080:8080 $(IMAGE)
 
+prep:
+	zarf tools download-init
+
 # output the zarf package create command
+steps:
+	@echo "key\ncreate\nunarchive\ninit\ndeploy"
 
 key:
 	@echo "zarf tools gen-key"
@@ -40,11 +45,8 @@ key:
 create:
 	@echo "zarf package create --signing-key cosign.key --signing-key-pass test"
 
-sbom:
-	@echo "zarf package inspect sbom zarf-package-cnad-amd64-0.0.1.tar.zst --output sbom"
-
 deploy:
-	@echo "zarf package deploy zarf-package-cnad-amd64-0.0.1.tar.zst --key cosign.pub"
+	@echo "zarf package deploy zarf-package-cnad-amd64-0.0.1.tar.zst --key cosign.pub --confirm"
 
 unarchive:
 	@echo "zarf tools archiver decompress zarf-package-cnad-amd64-0.0.1.tar.zst archive --unarchive-all"
