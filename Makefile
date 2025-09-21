@@ -17,11 +17,6 @@ build:
 	@echo ">> Building Go binary for $(GOOS)/$(GOARCH)"
 	CGO_ENABLED=0 GOOS=$(GOOS) GOARCH=$(GOARCH) go build $(GOFLAGS) -o $(BINARY) .
 
-# Remove build artifacts
-clean:
-	@echo ">> Cleaning build artifacts"
-	rm -f $(BINARY)
-
 # Build Docker image
 docker: build
 	@echo ">> Building Docker image: $(IMAGE)"
@@ -46,7 +41,10 @@ create:
 	@echo "zarf package create --signing-key cosign.key --signing-key-pass test"
 
 deploy:
-	@echo "zarf package deploy zarf-package-cnad-amd64-0.0.1.tar.zst --key cosign.pub --confirm"
+	@echo "zarf package deploy zarf-package-cnad-arm64-0.0.1.tar.zst --key cosign.pub --confirm"
 
 unarchive:
-	@echo "zarf tools archiver decompress zarf-package-cnad-amd64-0.0.1.tar.zst archive --unarchive-all"
+	@echo "zarf tools archiver decompress zarf-package-cnad-arm64-0.0.1.tar.zst archive --unarchive-all"
+
+clean:
+	rm cosign.pub cosign.key zarf-package-cnad-arm64-0.0.1.tar.zst ${BINARY} && rm -rf archive/
